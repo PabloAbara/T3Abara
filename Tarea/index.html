@@ -3,16 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>T3Abara</title>
-    <style>
-       #map {
-        height: 600px;
-        width: 100%;
-       }
-    </style>
+    <link rel="stylesheet" href="./css/master.css">
     <link rel="stylesheet" type="text/css" href="map-icons-master/dist/css/map-icons.css">
   </head>
   <body>
-    <h3>Mapa de Tarea 3</h3>
+    <h3 id="title">Tráfico de Aviones</h3><small id="title">T3 Pablo Abara</small>
     <div id="map"></div>
     <script src="./node_modules/socket.io-client/dist/socket.io.js"></script>
     <script src="index.js"></script>
@@ -20,5 +15,8 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-QD54cR61jfbI_UruJR8KoH2H-m7jeuo&callback=initMap">
       </script>
       <script type="text/javascript" src="map-icons-master/dist/js/map-icons.js"></script>
+      <div id="footer" class="tooltip">Need Help?
+        <span class="tooltiptext">Para ver más información sobre los aviones, puedes pasar el mouse sobre cada vuelo. Del mismo modo, si quieres saber más sobre los aeropuertos, pasa el mouse sobre los íconos verdes con un avión blanco</span>
+      </div>
   </body>
 </html>

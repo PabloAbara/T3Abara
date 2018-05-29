@@ -108,7 +108,7 @@ function initMap() {
       fillOpacity: 0.8,
       scale: 0.07,
       strokeColor: 'black',
-      strokeWeight: 1,
+      strokeWeight: 0.5,
       origin: new google.maps.Point(0,0),
       anchor: new google.maps.Point(0,240)
     };
@@ -129,6 +129,7 @@ function initMap() {
         var heading = google.maps.geometry.spherical.computeHeading(path_1, path_2);
         var auxIcon = plane;
         auxIcon.rotation=heading-90;
+        // auxIcon.strokeColor = markers[i]['color'];
         markers[i]['marker'].setIcon(auxIcon);
         var line = new google.maps.Polyline({
             path: [
