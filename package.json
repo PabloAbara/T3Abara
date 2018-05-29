@@ -1,0 +1,11 @@
+{
+  "name": "T3",
+  "version": "0.0.1",
+  "description": "Air Traffic ",
+  "dependencies": {
+    "express": "^4.15.2",
+    "install": "^0.11.0",
+    "npm": "^6.1.0",
+    "socket.io": "^2.1.1"
+  }
+}
