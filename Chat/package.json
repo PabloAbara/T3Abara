@@ -1,0 +1,8 @@
+{
+  "name": "socket-chat-example",
+  "version": "0.0.1",
+  "description": "Tarea 3, Pabo Abara",
+  "dependencies": {
+    "socket.io": "^2.1.1"
+  }
+}
