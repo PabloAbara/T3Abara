@@ -154,7 +154,7 @@ function initMap() {
         },
       });
 
-      var flight;
+      var flight = null;
       for(var i=0;i<flights.length;i++){
         if(flights[i]['code']==data['code']){
           flight = flights[i];
@@ -163,26 +163,27 @@ function initMap() {
       }
       // luego identifico el vuelo al que corresponde y creo una
       // information Window
-      var contentString = '<div id="content">'+
-      '<h1>NºVuelo:'+ flight['code'] + '</h1>'+
-      '<h4>Aerolínea: '+ flight['airline'] + '</h4>'+
-      '<h4>Origen: '+ flight['origin'] + '</h4>'+
-      '<h4>Destino: '+ flight['destination'] + '</h4>'+
-      '<h4>Avión: '+ flight['plane'] + '</h4>'+
-      '<h4>Cantidad Asientos: '+ flight['seats'] + '</h4>'+
-      '</div>';
-
-      var infowindow = new google.maps.InfoWindow({
-        content: contentString
-      });
-      marker.addListener('mouseover', function() {
-        infowindow.open(map, marker);
-      });
-      marker.addListener('mouseout', function() {
-        infowindow.close();
-      });
-      var color = colors[Math.floor(Math.random()*colors.length)];
-      markers.push({color:color,marker:marker,code:data['code'],lat:myLatLng['lat'],lng:myLatLng['lng']});
+      if(flight != null){
+        var contentString = '<div id="content">'+
+        '<h1>NºVuelo:'+ flight['code'] + '</h1>'+
+        '<h4>Aerolínea: '+ flight['airline'] + '</h4>'+
+        '<h4>Origen: '+ flight['origin'] + '</h4>'+
+        '<h4>Destino: '+ flight['destination'] + '</h4>'+
+        '<h4>Avión: '+ flight['plane'] + '</h4>'+
+        '<h4>Cantidad Asientos: '+ flight['seats'] + '</h4>'+
+        '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+        marker.addListener('mouseover', function() {
+          infowindow.open(map, marker);
+        });
+        marker.addListener('mouseout', function() {
+          infowindow.close();
+        });
+        var color = colors[Math.floor(Math.random()*colors.length)];
+        markers.push({color:color,marker:marker,code:data['code'],lat:myLatLng['lat'],lng:myLatLng['lng']});
+      }
     }
   });
 }

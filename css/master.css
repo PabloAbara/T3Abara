@@ -11,6 +11,9 @@ html,body{
 #title {
   color: white;
 }
+#mistake {
+  color: gray;
+}
 #footer {
   /* font-size: 20px; */
   color: white;
